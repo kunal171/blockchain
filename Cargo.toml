@@ -1,0 +1,14 @@
+[package]
+name = "blockchain"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Async runtime + TCP for the gossip networking layer (Milestone 0).
+tokio = { version = "1", features = ["full"] }
+# Wire format for gossip messages (length-prefixed JSON, like the distributed queue).
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Block hashing for the chain (Milestone 1+).
+sha2 = "0.10"
+hex = "0.4"
