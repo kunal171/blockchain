@@ -4,6 +4,7 @@
 use crate::gossip::peer::{Peer, PeerId};
 
 /// Every message exchanged over the gossip network.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Message {
     Join { id: PeerId, addr: String }, // A new peer is joining the network
 
@@ -11,9 +12,9 @@ pub enum Message {
 
     Gossip {Payload: String}, // A gossip message with a payload
 
-    Ping { id: PeerId }, // A ping message to check if a peer is alive
+    Ping { from: PeerId }, // A ping message to check if a peer is alive
 
-    Ack { id: PeerId }, // An acknowledgment message in response to a ping
+    Ack { from: PeerId }, // An acknowledgment message in response to a ping
 
-    PingRequest { id: PeerId }, // A request to ping a peer
+    PingRequest { from: PeerId, target: PeerId }, // A request to ping a peer
 }
