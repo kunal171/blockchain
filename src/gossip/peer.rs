@@ -14,7 +14,7 @@ pub enum PeerState {
 
 /// A peer this node knows about in the gossip network. 
 /// It has a unique ID, an address, and a state.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Peer {
     pub id: PeerId,
     pub addr: String, //IP address and port of the peer e.g."127.0.0.1:8080"
