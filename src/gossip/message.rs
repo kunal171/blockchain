@@ -1,5 +1,6 @@
 //! This module defines the Message struct, which represents a message in the gossip network.
 //! 
+use serde::{Serialize, Deserialize};
 
 use crate::gossip::peer::{Peer, PeerId};
 
@@ -10,7 +11,7 @@ pub enum Message {
 
     PeerList { peers: Vec<Peer> }, // A list of known peers
 
-    Gossip {Payload: String}, // A gossip message with a payload
+    Gossip { payload: String }, // A gossip message with a payload
 
     Ping { from: PeerId }, // A ping message to check if a peer is alive
 
