@@ -4,7 +4,8 @@ A mini blockchain in Rust, built on a peer-to-peer gossip networking foundation.
 
 Raft (Phase 2C) solved consensus among *trusting* nodes. A blockchain solves it among *untrusting* nodes: anyone can propose a block, so agreement comes from cryptographic hashing, Proof of Work, and a longest-valid-chain rule rather than a single elected leader. This project builds that from scratch, on top of a gossip layer that propagates transactions and blocks across the network.
 
-For the gossip/peer-discovery theory (Milestone 0), see **[GOSSIP_CONCEPTS.md](GOSSIP_CONCEPTS.md)**.
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** — living design doc: module map, data model, wire protocol, concurrency model, and what's built vs planned.
+- **[GOSSIP_CONCEPTS.md](GOSSIP_CONCEPTS.md)** — theory behind the networking foundation (Milestone 0).
 
 ---
 
