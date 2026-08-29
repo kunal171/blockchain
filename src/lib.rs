@@ -22,4 +22,4 @@
 //! milestone plan.
 
 // Modules are declared here as each milestone is built, e.g.:
-// pub mod gossip;
+pub mod gossip;
