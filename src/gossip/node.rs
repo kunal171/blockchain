@@ -52,4 +52,15 @@ impl GossipNode{
             Message::PingRequest { from, target } => { /* Step 5 */ }
         }
     }
+
+    /// Insert or update a peer. Never tracks ourselves.
+    pub async fn add_peer(&self, peer: Peer) {
+        if peer.id == self.id {
+            return; // a node is not its own peer
+        }
+        let mut peers = self.peers.lock().await;
+        peers.insert(peer.id, peer);
+    }
+
+    
 }
